@@ -2,6 +2,8 @@ import "./App.css";
 import React from "react";
 import styled from "styled-components";
 
+// Base/main rev...
+
 const PageContainer = styled.div`
   margin: 50px auto;
   background: grey;
@@ -24,7 +26,8 @@ const media = {
 };
 
 const Gutter = styled.div`
-  flex: 1;
+  //flex: 1;
+  flex-basis: 50px;
   background: lightcoral;
   text-align: center;
   padding-top: 100px;
@@ -41,7 +44,7 @@ const CardContainer = styled.div`
   flex-wrap: wrap;
   justify-content: flex-start; //center; //flex-start;
   border: 2px solid blue;
-  flex: 5;
+  //flex: 5;
 `;
 
 const Card = styled.div`
@@ -50,6 +53,16 @@ const Card = styled.div`
   background: pink;
   margin: 5px;
   overflow: hidden;
+`;
+
+const Parent = styled.div`
+  display: inline-flex;
+`;
+
+const Child = styled.div`
+  //flex: 1;
+  flex-basis: 50px;
+  background: lightblue;
 `;
 
 function App() {
@@ -78,6 +91,11 @@ function App() {
         <Gutter collapse="md">Gutter</Gutter>
       </ColumnsContainer>
       The rest of the app/page/...
+      <Parent>
+        <Child>A child</Child>
+        <div>A div</div>
+        <Child>A child</Child>
+      </Parent>
     </PageContainer>
   );
 }
