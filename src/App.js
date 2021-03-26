@@ -56,13 +56,20 @@ const Card = styled.div`
 `;
 
 const Parent = styled.div`
-  display: inline-flex;
+  display: flex;
+  overflow: hidden;
+`;
+
+const Rows = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const Child = styled.div`
   //flex: 1;
-  flex-basis: 50px;
+  flex-basis: 250px;
   background: lightblue;
+  flex-shrink: 0;
 `;
 
 function App() {
@@ -93,9 +100,22 @@ function App() {
       The rest of the app/page/...
       <Parent>
         <Child>A child</Child>
-        <div>A div</div>
+        <div style={{ flex: 1 }}>A div</div>
         <Child>A child</Child>
       </Parent>
+      Table test...
+      <Rows>
+        <Parent>
+          <Child style={{ fontWeight: "bold" }}>one</Child>
+          <Child>two</Child>
+          <Child>three</Child>
+        </Parent>
+        <Parent>
+          <Child>1</Child>
+          <Child>2</Child>
+          <Child>3</Child>
+        </Parent>
+      </Rows>
     </PageContainer>
   );
 }
