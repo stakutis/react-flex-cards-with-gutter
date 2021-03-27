@@ -1,6 +1,7 @@
 import "./App.css";
 import React from "react";
 import styled from "styled-components";
+import Appbar from "./appbar";
 
 // Fish
 
@@ -75,7 +76,7 @@ const Child = styled.div`
 function App() {
   return (
     <PageContainer>
-      Some random stuff..
+      <Appbar />
       <ColumnsContainer>
         <Gutter collapse="md">
           Gutter; Vanishes at screen size 'md' and smaller.
